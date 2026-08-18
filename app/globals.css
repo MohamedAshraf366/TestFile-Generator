@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #EEF1F5;
+  --paper-line: #C9D2E0;
+  --ink: #14181F;
+  --blueprint: #1E4B8F;
+  --blueprint-deep: #123262;
+  --amber: #D98E04;
+  --signal: #2F7A4D;
+  --rule-red: #C4432B;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-line: var(--paper-line);
+  --color-ink: var(--ink);
+  --color-blueprint: var(--blueprint);
+  --color-blueprint-deep: var(--blueprint-deep);
+  --color-amber: var(--amber);
+  --color-signal: var(--signal);
+  --color-rule-red: var(--rule-red);
+  --font-display: "Avenir Next", "Century Gothic", Futura, "Segoe UI",
+    ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", "JetBrains Mono", ui-monospace, "SFMono-Regular",
+    Menlo, Consolas, monospace;
+}
+
+body {
+  background:
+    linear-gradient(var(--paper-line) 1px, transparent 1px) 0 0 / 100% 32px,
+    linear-gradient(90deg, var(--paper-line) 1px, transparent 1px) 0 0 / 32px 100%,
+    var(--paper);
+  background-attachment: local;
+  color: var(--ink);
+  font-family: var(--font-display);
+}
+
+@keyframes fill-sweep {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes tick-pop {
+  0% { opacity: 0; transform: translateY(2px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
